@@ -1,14 +1,11 @@
-import { useState } from "react";
-import { ArrowDown, ArrowRight, Sparkles, MapPin, Mail, Eye, Snowflake } from "lucide-react";
+import { ArrowDown, ArrowRight, Sparkles, MapPin, Mail, Eye } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 import { useTheme } from "../context/ThemeContext";
 import SplitFlapText from "./SplitFlapText";
 import ElectricBorder from "./ElectricBorder";
-import PixelSnow from "./PixelSnow";
 
 export default function Hero() {
   const { theme } = useTheme();
-  const [snowEnabled, setSnowEnabled] = useState(true);
 
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
@@ -23,23 +20,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 overflow-hidden"
     >
-      {/* Ambient PixelSnow Atmospheric Background (React Bits) */}
-      {snowEnabled && (
-        <div className="absolute inset-0 pointer-events-none opacity-30 dark:opacity-45 overflow-hidden transition-opacity duration-500">
-          <PixelSnow
-            color={theme === "dark" ? "#7dd3fc" : "#2563eb"}
-            flakeSize={0.012}
-            minFlakeSize={1.2}
-            pixelResolution={180}
-            speed={0.85}
-            density={0.25}
-            direction={125}
-            brightness={1}
-            variant="snowflake"
-          />
-        </div>
-      )}
-
       {/* Subtle ambient lighting grid (developer aesthetic, crisp in light mode) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f060_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f060_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
@@ -61,17 +41,6 @@ export default function Hero() {
             <MapPin size={13} className="text-blue-600 dark:text-blue-400" />
             <span>{personalInfo.location}</span>
           </div>
-
-          {/* Pixel Snow Ambience Toggle Badge */}
-          <button
-            type="button"
-            onClick={() => setSnowEnabled((prev) => !prev)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-blue-400 dark:hover:border-blue-500 shadow-xs cursor-pointer transition-colors"
-            title="Toggle React Bits PixelSnow Atmospheric Canvas"
-          >
-            <Snowflake size={13} className={snowEnabled ? "text-blue-600 dark:text-blue-400 animate-spin" : "text-slate-400"} />
-            <span>Pixel Snow: {snowEnabled ? "Active" : "Paused"}</span>
-          </button>
         </div>
 
         {/* Main Heading */}
