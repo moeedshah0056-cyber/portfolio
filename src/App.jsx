@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import ScrollExpandShowcase from "./components/ScrollExpandShowcase";
 import Services from "./components/Services";
 import Learning from "./components/Learning";
 import WhyWorkWithMe from "./components/WhyWorkWithMe";
@@ -21,6 +22,7 @@ function PortfolioHome() {
         <About />
         <Skills />
         <Projects />
+        <ScrollExpandShowcase />
         <Services />
         <Learning />
         <WhyWorkWithMe />
