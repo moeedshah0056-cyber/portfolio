@@ -1,0 +1,121 @@
+.scroll-list-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.scroll-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 12px 14px;
+}
+
+.scroll-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark .scroll-list::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark .scroll-list::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.item {
+  padding: 14px 18px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.item.selected {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 2px 12px -2px rgba(37, 99, 235, 0.2);
+}
+
+.dark .item {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+}
+
+.dark .item:hover {
+  border-color: #38bdf8;
+  background-color: #1e293b;
+}
+
+.dark .item.selected {
+  background-color: #1e293b;
+  border-color: #3b82f6;
+  box-shadow: 0 0 16px -2px rgba(59, 130, 246, 0.25);
+}
+
+.item-text {
+  color: #1e293b;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.dark .item-text {
+  color: #f8fafc;
+}
+
+.top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, #ffffff, transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.dark .top-gradient {
+  background: linear-gradient(to bottom, #020617, transparent);
+}
+
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.dark .bottom-gradient {
+  background: linear-gradient(to top, #020617, transparent);
+}
